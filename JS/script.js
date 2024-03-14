@@ -32,17 +32,17 @@ createApp({
 
         if (message.status=='sent') {
 
-          typeMsg=`"d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r light-green"`;
+          this.typeMsg=`"d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r light-green"`;
 
-          return typeMsg
+          return this.typeMsg
 
           
           
         } else {
 
-          typeMsg=`"d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r bg-white"`;
+          this.typeMsg=`"d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r bg-white"`;
 
-          return typeMsg
+          return this.typeMsg
 
           
         }
