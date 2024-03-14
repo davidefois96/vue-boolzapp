@@ -68,7 +68,7 @@
       
       <!-- sezione sinistra con contatti e scrollbar -->
       
-      <div class="col o-s h-scroll b-d-l b-d-r white dark" >
+      <div class="col o-s h-scroll b-d-l b-d-r received dark" >
 
 
         <div v-for="(contact,Id) in contacts" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd " @click="selectedId= Id">
@@ -134,14 +134,14 @@
       <div class="row d-flex f-c h-scroll2 o-s p-t-50 p-l-93 p-r-93">
 
         
-        <div v-for="(msg,Id) in contacts[selectedId].messages" class="d-flex j-r m-b-10">
+        <div v-for="(msg,Id) in contacts[selectedId].messages" class="d-flex m-b-10" :class="(msg.status=='sent')?isSent: '' ">
           
-          <div :class="`${typeMsg}`">
+          <div class="d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r" :class="msg.status">
 
             {{msg.message}}
             <div class="app">
 
-             <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
+             <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon p1 "></i>
              <p class="p-a-2 grey-search-icon">{{msg.date}} </p>
              <ul class="p-a-3 f-c a-i-c j-c d-none zInd" >
 
@@ -167,7 +167,7 @@
       <div class="row h-70 beige d-flex a-i-c j-s-b p-l-28 p-r-28 dark">
          
         <a href="#"><i class="fa-regular fa-face-smile m-r-30 dark-grey b"></i></a>
-        <input class="w-100 h-50 p-l-16 b-r-5 b-n grey-back-text" type="text" placeholder="Scrivi un messaggio">
+        <input class="w-100 h-50 p-l-16 b-r-5 b-n grey-back-text" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="addMessage(),answer()">
         <a href="#"><i class="fa-solid fa-microphone m-l-30 dark-grey b"></i></a>
         
       </div>

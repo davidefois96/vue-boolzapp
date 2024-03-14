@@ -197,8 +197,8 @@ div.h-scroll2{background-image: url("../assets/img/mine.jpg");}
 .dark-grey{color:#6b7376}
 .beige{background-color: #f3eeea;}
 .light-blue{background-color: #8edafc;}
-.light-green{background-color: #d5f9ba;}
-.white{background-color: white;}
+.sent{background-color: #d5f9ba;}
+.received{background-color: white;}
 
 
 /*media queries*/

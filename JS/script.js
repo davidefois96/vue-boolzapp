@@ -15,8 +15,9 @@ createApp({
     return{
       contacts,
       selectedId :0,
-      typeMsg: ''
-      
+      isSent: 'j-r',
+      newMessage: '',
+
     }
 
     
@@ -26,36 +27,43 @@ createApp({
   
   methods:{
 
-    isSent(){
+    
 
-      contacts[selectedId].messages.forEach(message => {
+    addMessage() {
+    
+    
 
-        if (message.status=='sent') {
+    const newMsg = {
+      date: '10/01/2020 15:30:55',
+      message: this.newMessage,
+      status: 'sent'
+    };
 
-          this.typeMsg=`"d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r light-green"`;
+    
+    this.contacts[this.selectedId].messages.push(newMsg);
 
-          return this.typeMsg
+    this.newMessage ='';
 
-          
-          
-        } else {
+    },
 
-          this.typeMsg=`"d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r bg-white"`;
+    answer(){
 
-          return this.typeMsg
+     setTimeout(() => {
 
-          
-        }
-        
-      });
+      const newMsg = {
+        date: '10/01/2020 15:30:55',
+        message: 'OK!',
+        status: 'received'
+      };
+  
+      
+      this.contacts[this.selectedId].messages.push(newMsg);
 
-
+     }, 1000);
 
     }
 
-
-
-
+    
 
   },
 
@@ -72,7 +80,7 @@ createApp({
   mounted(){
 
 
-    isSent();
+    
 
 
   }
