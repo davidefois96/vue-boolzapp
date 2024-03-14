@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Html-css-boolzap</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' crossorigin='anonymous'/><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css' integrity='sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==' crossorigin='anonymous'/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+  <!-- inizio main  -->
+
+  <main class="container d-flex"> 
+
+    <!-- inizio colonna sinistra -->
+
+    <div class="col d-flex f-c w-380 b-d-r">
+
+      <!--topbar alta sinistra -->
+
+      <div class="row d-flex h-70 grey-top-bars p-l-25 p-r-5 a-i-c j-s-b res-st dark"> 
+        
+        <img class="circle-box image" src="assets/img/avatar_io.jpg" alt="avatar_io">
+
+        <div class="d-flex disap ">
+
+          <a href="#"><i class="fa-solid fa-circle-notch m-r-20 grey-icons t"></i></a>
+          <a href="#"><i class="fa-solid fa-message m-r-20 grey-icons t"></i></a>
+          <a href="#"><i class="fa-solid fa-ellipsis-vertical m-r-20 grey-icons t"></i></a>
+
+        </div>
+
+      </div>
+
+      <!-- sezione sinistra celeste notifiche desktop -->
+
+      <div class="row d-flex h-80 light-blue p-l-25 a-i-c">
+
+        <div class="circle-box white m-r-15"><i class="fa-solid fa-bell-slash t"></i></div>
+
+        <div>
+
+          <p class="p1 m-b-5">Ricevi notifiche di nuovi messaggi</p>
+          <p class="p2"><a class="dark-grey" href="#">Attiva notifiche desktop</a></p>
+
+
+        </div>
+        
+      </div>
+
+      <!-- sezione sinistra con barra di ricerca -->
+
+      <div class="row d-flex h-50 grey-search-bg p-7"> 
+
+        <div class="white w-100 d-flex a-i-c p-l-16 b-l">
+
+          <i class="fa-solid fa-magnifying-glass m-r-27 grey-search-icon"></i>
+          <input class="b-n w-100 grey-search-text h-100 " type="text" placeholder="Cerca o inizia una nuova chat">
+
+        </div>
+
+      </div>
+      
+      <!-- sezione sinistra con contatti e scrollbar -->
+      
+      <div class="col o-s h-scroll b-d-l b-d-r white dark" >
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_1.jpg" alt="avatar_1">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Michele</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+
+          </div>
+
+          <p class="p-a-1 grey-text-user disap">16:08</p>
+
+        </div>
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_2.jpg" alt="avatar_2">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Fabio</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+
+          </div>
+
+          <p class="p-a-1 grey-text-user disap ">16:05</p>
+
+        </div>
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_3.jpg" alt="avatar_3">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Samuele</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+
+          </div>
+
+          <p class="p-a-1 grey-text-user disap ">16:03</p>
+
+        </div>
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_4.jpg" alt="avatar_4">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Alessandro B.</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+
+          </div>
+
+          <p class="p-a-1 grey-text-user disap">15:50</p>
+
+        </div>
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_5.jpg" alt="avatar_5">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Alessandro L.</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+
+          </div>
+
+          <p class="p-a-1 grey-text-user disap ">15:45</p>
+
+        </div>
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_6.jpg" alt="avatar_6">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Claudia</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+
+          </div>
+
+          <p class="p-a-1 grey-text-user disap ">15:40</p>
+
+        </div>
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_7.jpg" alt="avatar_7">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Federico</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+
+          </div>
+
+          <p class="p-a-1 grey-text-user disap">15:22</p>
+
+        </div>
+
+
+        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+
+          <div class="d-flex a-i-c">
+
+           <img class="circle-box image m-r-15" src="assets/img/avatar_8.jpg" alt="avatar_8">
+
+           <div class="disap">
+
+            <p class="m-b-5 p1"><strong>Davide</strong></p>
+            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+          
+           </div>
+        
+          </div>
+
+          <p class="p-a-1 grey-text-user disap ">15:15</p>
+
+        </div>
+
+
+      </div>
+
+      
+    </div>
+
+    <!-- fine colonna sinistra -->
+     
+    <!-- inizio colonna destra -->
+
+    <div class="col f-g d-flex f-c  ">
+
+      <!-- topbar alta destra -->
+
+      <div class="row d-flex h-70 grey-top-bars p-l-25 p-r-5 a-i-c j-s-b dark">
+
+        <div class="d-flex a-i-c">
+
+          <img class="circle-box image m-r-15" src="assets/img/avatar_1.jpg" alt="avatar_1">
+
+          <div>
+
+            <p class="m-b-5 p1 "><strong>Michele</strong></p>
+            <p class="p2 dark-grey">Ultimo accesso oggi alle 16:26</p>
+          
+          </div>
+
+        </div>
+         
+        
+        <div class="d-flex ">
+         
+          <a href="#"><i class="fa-solid fa-magnifying-glass m-r-20 grey-icons t"></i></a>
+          <a href="#"><i class="fa-solid fa-paperclip m-r-20 grey-icons t"></i></a>
+          <a href="#"><i class="fa-solid fa-ellipsis-vertical m-r-20 grey-icons t"></i></a>
+          
+        </div>
+
+      </div>
+
+      <!-- sezione destra messaggi con scrollbar -->
+      
+      <div class="row d-flex f-c h-scroll2 o-s p-t-50 p-l-93 p-r-93">
+
+        
+        <div class="d-flex j-r m-b-10">
+          
+          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 light-green  p-r">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
+            
+            <div class="app">
+
+             <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
+             <p class="p-a-2 grey-search-icon">16:08</p>
+             <ul class="p-a-3 f-c a-i-c j-c d-none" >
+
+              <li class="m-b-10"><a href="#">Info messaggio</a></li>
+              <li><a href="#">Cancella messaggio</a></li>
+
+             </ul>
+
+            </div>
+
+          </div>
+      
+      
+        </div>
+
+        <div class="d-flex m-b-10">
+          
+          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 white p-r">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
+
+            <div class="app">
+              
+              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
+              <p class="p-a-2 grey-search-icon">16:13</p>
+              <ul class="p-a-3 f-c a-i-c j-c d-none" >
+  
+                <li class="m-b-10"><a href="#">Info messaggio</a></li>
+                <li><a href="#">Cancella messaggio</a></li>
+
+  
+              </ul>
+
+            </div>
+            
+          </div>
+      
+      
+        </div>
+
+        <div class="d-flex j-r m-b-10">
+          
+          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 light-green p-r">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
+             
+            <div class="app">
+              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
+              <p class="p-a-2 grey-search-icon">16:14</p>
+              <ul class="p-a-3 f-c a-i-c j-c d-none" >
+  
+                <li class="m-b-10"><a href="#">Info messaggio</a></li>
+                <li><a href="#">Cancella messaggio</a></li>
+
+  
+              </ul>
+            
+            </div>
+            
+
+          </div>
+      
+      
+        </div>
+
+        <div class="d-flex m-b-10">
+          
+          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 white p-r">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
+
+            <div class="app">
+               
+              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
+              <p class="p-a-2 grey-search-icon">16:15</p>
+              <ul class="p-a-3 f-c a-i-c j-c d-none" >
+  
+                <li class="m-b-10"><a href="#">Info messaggio</a></li>
+                <li><a href="#">Cancella messaggio</a></li>
+
+  
+              </ul>
+
+            </div>
+
+            
+          </div>
+      
+      
+        </div>
+
+        <div class="d-flex j-r m-b-10">
+          
+          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 light-green  p-r">
+
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
+
+            <div class="app">
+              
+              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
+              <p class="p-a-2 grey-search-icon">16:16</p>
+              <ul class="p-a-3 f-c a-i-c j-c d-none" >
+  
+                <li class="m-b-10"><a href="#">Info messaggio</a></li>
+                <li><a href="#">Cancella messaggio</a></li>
+
+  
+              </ul>
+            
+            </div>
+
+            
+
+          </div>
+      
+      
+        </div>
+        
+      
+      </div>
+
+      <!-- barra in basso a destra digitazione messaggio  -->
+
+      <div class="row h-70 beige d-flex a-i-c j-s-b p-l-28 p-r-28 dark">
+         
+        <a href="#"><i class="fa-regular fa-face-smile m-r-30 dark-grey b"></i></a>
+        <input class="w-100 h-50 p-l-16 b-r-5 b-n grey-back-text" type="text" placeholder="Scrivi un messaggio">
+        <a href="#"><i class="fa-solid fa-microphone m-l-30 dark-grey b"></i></a>
+        
+      </div>
+
+
+    </div>
+
+    <!-- fine colonna destra -->
+
+  </main>
+
+  <!-- fine main -->
+
+  <script src="JS/script.js"></script>
+
+</body>
+</html>
