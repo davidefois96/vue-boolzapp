@@ -98,6 +98,8 @@ div.h-scroll2{background-image: url("../assets/img/mine.jpg");}
 
 .app:hover .p-a-3{display: flex;}
 
+.zInd{z-index: 99;}
+
 
 /*sizes*/
 

@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body id="app">
+<body id="myApp">
 
   <!-- inizio main  -->
 
@@ -71,7 +71,7 @@
       <div class="col o-s h-scroll b-d-l b-d-r white dark" >
 
 
-        <div v-for="contact in contacts" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+        <div v-for="(contact,Id) in contacts" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd " @click="selectedId= Id">
 
           <div class="d-flex a-i-c">
 
@@ -80,13 +80,13 @@
            <div class="disap">
 
             <p class="m-b-5 p1"><strong>{{contact.name}} </strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
+            <p class="p2 grey-text-user">{{contact.messages[contact.messages.length-1].message}} </p>
           
            </div>
 
           </div>
 
-          <p class="p-a-1 grey-text-user disap">16:08</p>
+          <p class="p-a-1 grey-text-user disap">date</p>
 
         </div>
 
@@ -134,17 +134,16 @@
       <div class="row d-flex f-c h-scroll2 o-s p-t-50 p-l-93 p-r-93">
 
         
-        <div class="d-flex j-r m-b-10">
+        <div v-for="(msg,Id) in contacts[selectedId].messages" class="d-flex j-r m-b-10">
           
-          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 light-green  p-r">
+          <div :class="`${typeMsg}`">
 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
-            
+            {{msg.message}}
             <div class="app">
 
              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
-             <p class="p-a-2 grey-search-icon">16:08</p>
-             <ul class="p-a-3 f-c a-i-c j-c d-none" >
+             <p class="p-a-2 grey-search-icon">{{msg.date}} </p>
+             <ul class="p-a-3 f-c a-i-c j-c d-none zInd" >
 
               <li class="m-b-10"><a href="#">Info messaggio</a></li>
               <li><a href="#">Cancella messaggio</a></li>
@@ -157,109 +156,8 @@
       
       
         </div>
-
-        <div class="d-flex m-b-10">
+ 
           
-          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 white p-r">
-
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
-
-            <div class="app">
-              
-              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
-              <p class="p-a-2 grey-search-icon">16:13</p>
-              <ul class="p-a-3 f-c a-i-c j-c d-none" >
-  
-                <li class="m-b-10"><a href="#">Info messaggio</a></li>
-                <li><a href="#">Cancella messaggio</a></li>
-
-  
-              </ul>
-
-            </div>
-            
-          </div>
-      
-      
-        </div>
-
-        <div class="d-flex j-r m-b-10">
-          
-          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 light-green p-r">
-
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
-             
-            <div class="app">
-              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
-              <p class="p-a-2 grey-search-icon">16:14</p>
-              <ul class="p-a-3 f-c a-i-c j-c d-none" >
-  
-                <li class="m-b-10"><a href="#">Info messaggio</a></li>
-                <li><a href="#">Cancella messaggio</a></li>
-
-  
-              </ul>
-            
-            </div>
-            
-
-          </div>
-      
-      
-        </div>
-
-        <div class="d-flex m-b-10">
-          
-          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 white p-r">
-
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
-
-            <div class="app">
-               
-              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
-              <p class="p-a-2 grey-search-icon">16:15</p>
-              <ul class="p-a-3 f-c a-i-c j-c d-none" >
-  
-                <li class="m-b-10"><a href="#">Info messaggio</a></li>
-                <li><a href="#">Cancella messaggio</a></li>
-
-  
-              </ul>
-
-            </div>
-
-            
-          </div>
-      
-      
-        </div>
-
-        <div class="d-flex j-r m-b-10">
-          
-          <div class=" d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 light-green  p-r">
-
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis nostrum enim amet minima, tempora quae veniam incidunt nemo. Fuga facilis, dolore commodi vel eum voluptates dolorem fugit quia quam laborum!
-
-            <div class="app">
-              
-              <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon  p1 "></i>
-              <p class="p-a-2 grey-search-icon">16:16</p>
-              <ul class="p-a-3 f-c a-i-c j-c d-none" >
-  
-                <li class="m-b-10"><a href="#">Info messaggio</a></li>
-                <li><a href="#">Cancella messaggio</a></li>
-
-  
-              </ul>
-            
-            </div>
-
-            
-
-          </div>
-      
-      
-        </div>
         
       
       </div>
