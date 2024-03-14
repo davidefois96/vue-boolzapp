@@ -17,6 +17,7 @@ createApp({
       selectedId :0,
       isSent: 'j-r',
       newMessage: '',
+      searchUser: '',
 
     }
 
@@ -70,17 +71,16 @@ createApp({
   
   computed:{
 
-
-
+    filteredUsers(){
+      
+      return contacts.filter(contact => contact.name.toLowerCase().includes(this.searchUser.toLowerCase()))
+    }
 
 
   },
 
   
   mounted(){
-
-
-    
 
 
   }

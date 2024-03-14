@@ -41,7 +41,7 @@
 
       <div class="row d-flex h-80 light-blue p-l-25 a-i-c">
 
-        <div class="circle-box white m-r-15"><i class="fa-solid fa-bell-slash t"></i></div>
+        <div class="circle-box received m-r-15"><i class="fa-solid fa-bell-slash t"></i></div>
 
         <div>
 
@@ -60,7 +60,8 @@
         <div class="white w-100 d-flex a-i-c p-l-16 b-l">
 
           <i class="fa-solid fa-magnifying-glass m-r-27 grey-search-icon"></i>
-          <input class="b-n w-100 grey-search-text h-100 " type="text" placeholder="Cerca o inizia una nuova chat">
+
+          <input class="b-n w-100 grey-search-text h-100 " type="text" placeholder="Cerca o inizia una nuova chat" v-model="searchUser">
 
         </div>
 
@@ -71,7 +72,7 @@
       <div class="col o-s h-scroll b-d-l b-d-r received dark" >
 
 
-        <div v-for="(contact,Id) in contacts" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd " @click="selectedId= Id">
+        <div v-for="(contact,Id) in filteredUsers" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd " @click="selectedId= Id">
 
           <div class="d-flex a-i-c">
 
