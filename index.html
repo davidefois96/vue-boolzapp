@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-<body>
+<body id="app">
 
   <!-- inizio main  -->
 
@@ -71,15 +71,15 @@
       <div class="col o-s h-scroll b-d-l b-d-r white dark" >
 
 
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
+        <div v-for="contact in contacts" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
 
           <div class="d-flex a-i-c">
 
-           <img class="circle-box image m-r-15" src="assets/img/avatar_1.jpg" alt="avatar_1">
+           <img class="circle-box image m-r-15" :src="contact.avatar" alt="avatar_1">
 
            <div class="disap">
 
-            <p class="m-b-5 p1"><strong>Michele</strong></p>
+            <p class="m-b-5 p1"><strong>{{contact.name}} </strong></p>
             <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
           
            </div>
@@ -89,147 +89,6 @@
           <p class="p-a-1 grey-text-user disap">16:08</p>
 
         </div>
-
-
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
-
-          <div class="d-flex a-i-c">
-
-           <img class="circle-box image m-r-15" src="assets/img/avatar_2.jpg" alt="avatar_2">
-
-           <div class="disap">
-
-            <p class="m-b-5 p1"><strong>Fabio</strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
-          
-           </div>
-
-          </div>
-
-          <p class="p-a-1 grey-text-user disap ">16:05</p>
-
-        </div>
-
-
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
-
-          <div class="d-flex a-i-c">
-
-           <img class="circle-box image m-r-15" src="assets/img/avatar_3.jpg" alt="avatar_3">
-
-           <div class="disap">
-
-            <p class="m-b-5 p1"><strong>Samuele</strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
-          
-           </div>
-
-          </div>
-
-          <p class="p-a-1 grey-text-user disap ">16:03</p>
-
-        </div>
-
-
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
-
-          <div class="d-flex a-i-c">
-
-           <img class="circle-box image m-r-15" src="assets/img/avatar_4.jpg" alt="avatar_4">
-
-           <div class="disap">
-
-            <p class="m-b-5 p1"><strong>Alessandro B.</strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
-          
-           </div>
-
-          </div>
-
-          <p class="p-a-1 grey-text-user disap">15:50</p>
-
-        </div>
-
-
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
-
-          <div class="d-flex a-i-c">
-
-           <img class="circle-box image m-r-15" src="assets/img/avatar_5.jpg" alt="avatar_5">
-
-           <div class="disap">
-
-            <p class="m-b-5 p1"><strong>Alessandro L.</strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
-          
-           </div>
-
-          </div>
-
-          <p class="p-a-1 grey-text-user disap ">15:45</p>
-
-        </div>
-
-
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
-
-          <div class="d-flex a-i-c">
-
-           <img class="circle-box image m-r-15" src="assets/img/avatar_6.jpg" alt="avatar_6">
-
-           <div class="disap">
-
-            <p class="m-b-5 p1"><strong>Claudia</strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
-          
-           </div>
-
-          </div>
-
-          <p class="p-a-1 grey-text-user disap ">15:40</p>
-
-        </div>
-
-
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
-
-          <div class="d-flex a-i-c">
-
-           <img class="circle-box image m-r-15" src="assets/img/avatar_7.jpg" alt="avatar_7">
-
-           <div class="disap">
-
-            <p class="m-b-5 p1"><strong>Federico</strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
-          
-           </div>
-
-          </div>
-
-          <p class="p-a-1 grey-text-user disap">15:22</p>
-
-        </div>
-
-
-        <div class="row d-flex h-80 b-l-t p-l-25 p-r res-nd">
-
-          <div class="d-flex a-i-c">
-
-           <img class="circle-box image m-r-15" src="assets/img/avatar_8.jpg" alt="avatar_8">
-
-           <div class="disap">
-
-            <p class="m-b-5 p1"><strong>Davide</strong></p>
-            <p class="p2 grey-text-user">Lorem ipsum dolor sit amet</p>
-          
-           </div>
-        
-          </div>
-
-          <p class="p-a-1 grey-text-user disap ">15:15</p>
-
-        </div>
-
 
       </div>
 
@@ -424,7 +283,7 @@
 
   <!-- fine main -->
 
-  <script src="JS/script.js"></script>
+  <script type="module" src="JS/script.js"></script>
 
 </body>
 </html>
