@@ -113,7 +113,7 @@
           <div>
 
             <p class="m-b-5 p1 "><strong>{{contacts[selectedId].name}} </strong></p>
-            <p class="p2 dark-grey">Ultimo accesso oggi alle 16:26</p>
+            <p class="p2 dark-grey">Ultimo accesso: {{contacts[selectedId].messages[contacts[selectedId].messages.length-1].date}}</p>
           
           </div>
 
@@ -135,7 +135,7 @@
       <div class="row d-flex f-c h-scroll2 o-s p-t-50 p-l-93 p-r-93">
 
         
-        <div v-for="(msg,Id) in contacts[selectedId].messages" class="d-flex m-b-10" :class="(msg.status=='sent')?isSent: '' ">
+        <div v-for="(msg,Id) in contacts[selectedId].messages" class="d-flex m-b-10" :class="(msg.status==='sent')?isSent: '' ">
           
           <div class="d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r" :class="msg.status">
 
