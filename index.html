@@ -108,11 +108,11 @@
 
         <div class="d-flex a-i-c">
 
-          <img class="circle-box image m-r-15" src="assets/img/avatar_1.jpg" alt="avatar_1">
+          <img class="circle-box image m-r-15" :src="contacts[selectedId].avatar" :alt="contacts[selectedId].name">
 
           <div>
 
-            <p class="m-b-5 p1 "><strong>Michele</strong></p>
+            <p class="m-b-5 p1 "><strong>{{contacts[selectedId].name}} </strong></p>
             <p class="p2 dark-grey">Ultimo accesso oggi alle 16:26</p>
           
           </div>
