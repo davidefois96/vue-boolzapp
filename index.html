@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/luxon/3.4.4/luxon.min.js"></script> 
+ 
+  
 </head>
 <body id="myApp">
 
@@ -57,7 +60,7 @@
 
       <div class="row d-flex h-50 grey-search-bg p-7"> 
 
-        <div class="white w-100 d-flex a-i-c p-l-16 b-l">
+        <div class="received w-100 d-flex a-i-c p-l-16 b-l">
 
           <i class="fa-solid fa-magnifying-glass m-r-27 grey-search-icon"></i>
 
@@ -72,7 +75,7 @@
       <div class="col o-s h-scroll b-d-l b-d-r received dark" >
 
 
-        <div v-for="(contact,Id) in filteredUsers" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd " @click="selectedId= Id">
+        <div v-for="(contact,Id) in filteredUsers" class="row d-flex h-80 b-l-t p-l-25 p-r res-nd c-p" :class="(selectedId!=Id)? 'received': 'beige' " @click="selectedId=Id">
 
           <div class="d-flex a-i-c">
 
@@ -87,7 +90,7 @@
 
           </div>
 
-          <p class="p-a-1 grey-text-user disap">date</p>
+          <small class="p-a-1 grey-text-user disap">{{contact.messages[contact.messages.length-1].date}}</small>
 
         </div>
 
@@ -108,12 +111,12 @@
 
         <div class="d-flex a-i-c">
 
-          <img class="circle-box image m-r-15" :src="contacts[selectedId].avatar" :alt="contacts[selectedId].name">
+          <img class="circle-box image m-r-15" :src="filteredUsers[selectedId].avatar" :alt="contacts[selectedId].name">
 
           <div>
 
-            <p class="m-b-5 p1 "><strong>{{contacts[selectedId].name}} </strong></p>
-            <p class="p2 dark-grey">Ultimo accesso: {{contacts[selectedId].messages[contacts[selectedId].messages.length-1].date}}</p>
+            <p class="m-b-5 p1 "><strong>{{filteredUsers[selectedId].name}} </strong></p>
+            <p class="p2 dark-grey">Ultimo accesso: {{filteredUsers[selectedId].messages[filteredUsers[selectedId].messages.length-1].date}}</p>
           
           </div>
 
@@ -135,19 +138,19 @@
       <div class="row d-flex f-c h-scroll2 o-s p-t-50 p-l-93 p-r-93">
 
         
-        <div v-for="(msg,Id) in contacts[selectedId].messages" class="d-flex m-b-10" :class="(msg.status==='sent')?isSent: '' ">
+        <div v-for="(msg,Id) in filteredUsers[selectedId].messages" class="d-flex m-b-10" :class="(msg.status==='sent')?isSent: '' ">
           
-          <div class="d-flex p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r" :class="msg.status">
+          <div class="d-flex j-s-b p-t-19 p-b-40 p-l-16 p-r-15 b-r-10 m-w-435 p-r min-w-100 " :class="msg.status" @mouseleave="disappear=!disappear,disappId=''">
 
             {{msg.message}}
             <div class="app">
 
-             <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon p1 "></i>
+             <i class="fa-solid fa-chevron-down m-t-3 grey-search-icon p1 m-l-15" @click="disappear=!disappear, disappId=msg.date"  ></i>
              <p class="p-a-2 grey-search-icon">{{msg.date}} </p>
-             <ul class="p-a-3 f-c a-i-c j-c d-none zInd" >
+             <ul v-show="!disappear&&msg.date==disappId" class="p-a-3 f-c a-i-c j-c zInd" >
 
-              <li class="m-b-10"><a href="#">Info messaggio</a></li>
-              <li><a href="#">Cancella messaggio</a></li>
+              
+              <li @click="filteredUsers[selectedId].messages.splice(Id,1)"><a href="#">Cancella messaggio</a></li>
 
              </ul>
 

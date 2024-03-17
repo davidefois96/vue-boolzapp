@@ -2,6 +2,7 @@ import  {contacts}  from './contacts.js';
 
 
 const {createApp} = Vue;
+let {DateTime} = luxon;
 
 
 createApp({
@@ -18,6 +19,12 @@ createApp({
       isSent: 'j-r',
       newMessage: '',
       searchUser: '',
+      now: {},
+      disappear: true,
+      disappId: 'date',
+      
+      
+      
 
     }
 
@@ -35,7 +42,7 @@ createApp({
     
 
     const newMsg = {
-      date: '10/01/2020 15:30:55',
+      date: `${this.newDate()}` ,
       message: this.newMessage,
       status: 'sent'
     };
@@ -52,7 +59,7 @@ createApp({
      setTimeout(() => {
 
       const newMsg = {
-        date: '10/01/2020 15:30:55',
+        date: `${this.newDate()}` ,
         message: 'OK!',
         status: 'received'
       };
@@ -62,7 +69,15 @@ createApp({
 
      }, 1000);
 
-    }
+    },
+
+    newDate(){
+
+      this.now=DateTime.now();
+
+      return DateTime.now().setLocale('it').toFormat('dd/MM/yy hh/mm/ss');
+
+    },
 
     
 
