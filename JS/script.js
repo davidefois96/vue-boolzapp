@@ -21,7 +21,7 @@ createApp({
       searchUser: '',
       now: {},
       disappear: true,
-      disappId: 'date',
+      disappId: '',
       
       
       
@@ -48,7 +48,7 @@ createApp({
     };
 
     
-    this.contacts[this.selectedId].messages.push(newMsg);
+    this.filteredUsers[this.selectedId].messages.push(newMsg);
 
     this.newMessage ='';
 
@@ -65,7 +65,7 @@ createApp({
       };
   
       
-      this.contacts[this.selectedId].messages.push(newMsg);
+      this.filteredUsers[this.selectedId].messages.push(newMsg);
 
      }, 1000);
 
